@@ -28,10 +28,34 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
         <zipkin.version>2.10.1</zipkin.version>
+        <spring-boot-alibaba-druid.version>1.1.10</spring-boot-alibaba-druid.version>
+        <spring-boot-mapper.version>2.0.2</spring-boot-mapper.version>
+        <spring-boot-pagehelper.version>1.2.5</spring-boot-pagehelper.version>
+
+        <!--Environment Settings-->
+        <mysql.version>5.1.46</mysql.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!--Spring Boot Strater Begin-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${spring-boot-pagehelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${spring-boot-alibaba-druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${spring-boot-mapper.version}</version>
+            </dependency>
+            <!--Spring Boot Starter End-->
+
             <!-- Spring Cloud Begin -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -72,6 +96,14 @@
                 <version>${zipkin.version}</version>
             </dependency>
             <!-- ZipKin End -->
+
+            <!--Environment Begin-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--Environment End-->
         </dependencies>
     </dependencyManagement>
 
